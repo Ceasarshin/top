@@ -5,8 +5,8 @@ public class TicketPrinter {
             System.out.println(i);
         }
 
-        // Печать билетов от 220000 до 235000
-        for (int i = 220000; i <= 235000; i++) {
+        // Печать билетов от 330000 до 435000
+        for (int i = 330000; i <= 435000; i++) {
             System.out.println(i);
         }
     }
