@@ -11,7 +11,7 @@ public class Main {
         boolean myBoolean = true;
 
         // Арифметические операции с целами числами типа int
-        int a = 15;
+        int a = 10;
         int b = 5;
 
         int sum = a + b;           // Сложение
@@ -19,7 +19,7 @@ public class Main {
         int product = a * b;       // Умножение
         int quotient = a / b;      // Деление
         int remainder = a % b;     // Остаток от деления
-        int inkrement = ++a;       // Увеличение значения переменной "a" на 1. Инкремент.
+        int inkrement = ++a;       // Увеличения значения переменной "a" на 1. Инкремент.
         int dekrement = --a;       // Уменьшение значения переменной "a" на 1. Декремент.
 
         // Вывод результатов в консоль
