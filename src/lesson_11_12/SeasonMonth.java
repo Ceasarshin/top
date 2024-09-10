@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SeasonMonth {
     public static void main(String[] args) {
-        // Вводим номер месяца
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите номер месяца (1-12): ");
         int monthNumber = scanner.nextInt();

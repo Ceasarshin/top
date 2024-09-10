@@ -8,12 +8,12 @@ public class Income {
         double salaryMaria = 88880;
 
         // Процент увеличения зарплаты 15%
-        double increasePercent = 0.15;
+        double percent = 0.15;
 
         // Рассчитаем новые зарплаты
-        double newSalaryDiana = salaryDiana * (1 + increasePercent);
-        double newSalaryAndrey = salaryAndrey * (1 + increasePercent);
-        double newSalaryMaria = salaryMaria * (1 + increasePercent);
+        double newSalaryDiana = salaryDiana * (1 + percent);
+        double newSalaryAndrey = salaryAndrey * (1 + percent);
+        double newSalaryMaria = salaryMaria * (1 + percent);
 
         // Рассчитаем годовые доходы до и после повышения
         double annualIncomeDianaBefore = salaryDiana * 12;
@@ -29,9 +29,14 @@ public class Income {
         double differenceMaria = annualIncomeMariaAfter - annualIncomeMariaBefore;
 
 
-        System.out.printf("Диана теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей.%n", newSalaryDiana, differenceDiana);
-        System.out.printf("Андрей теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей.%n", newSalaryAndrey, differenceAndrey);
-        System.out.printf("Мария теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей.%n", newSalaryMaria, differenceMaria);
+        System.out.printf(
+                "Диана теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей.%n" +
+                        "Андрей теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей.%n" +
+                        "Мария теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей.%n",
+                newSalaryDiana, differenceDiana,
+                newSalaryAndrey, differenceAndrey,
+                newSalaryMaria, differenceMaria
+        );
     }
 }
 
