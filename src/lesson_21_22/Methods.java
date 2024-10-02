@@ -8,7 +8,7 @@ public class Methods {
         square();
         // 2. Вывод результата метода printFullName:
         printFullName("Владислав", "Матвеев");
-        // Вывод результата метода cornerValuesArray:
+        // 3. Вывод результата метода cornerValuesArray:
         cornerValuesArray();
     }
 
