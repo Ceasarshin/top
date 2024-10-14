@@ -25,7 +25,7 @@ public class TwoDimensionalArray {
         printRowSums(nums);
         printColumnSums(nums);
 
-        int[] nums2 = {4, 6, 12, 3, 8, 4};
+        int[] nums2 = {4, 6, 12, 3, 8, 5};
         System.out.println("Исходный массив: " + Arrays.toString(nums2));
         changArray(nums2);
         System.out.println("После изменения исходника: " + Arrays.toString(nums2));
