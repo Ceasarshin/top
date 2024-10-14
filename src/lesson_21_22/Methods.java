@@ -28,11 +28,44 @@ public class Methods {
         System.out.println("Самая короткая строка в массиве: " + strCornerValues[0] + "\n"
                 + "Самая длинная строка в массиве: " + strCornerValues[1]);
 
+        /* TEST: Вывод результата метода cornerValuesArray типа String[] со значениями одинаковой длины: */
+        String[] strCornerValues2 = cornerValuesArray("TOP", "411", "Doc");
+        System.out.println("Самая короткая строка в массиве: " + strCornerValues2[0] + "\n"
+                + "Самая длинная строка в массиве: " + strCornerValues2[1]);
+
+        /* TEST: Вывод результата метода cornerValuesArray типа String[] с одним значением: */
+        String[] strCornerValues3 = cornerValuesArray("411");
+        System.out.println("Самая короткая строка в массиве: " + strCornerValues3[0] + "\n"
+                + "Самая длинная строка в массиве: " + strCornerValues3[1]);
+
+        /* TEST: Вывод результата метода cornerValuesArray типа String[] с пустым массивом: */
+        String[] caseNull = {};
+        String[] strCornerValues4 = cornerValuesArray(caseNull);
+        System.out.println("Самая короткая строка в массиве: " + strCornerValues4[0] + "\n"
+                + "Самая длинная строка в массиве: " + strCornerValues4[1]);
+
         /* Lesson 23-24
          * 1. Вывод результата метода cornerValuesArray типа int[]: */
         int[] intCornerValues = cornerValuesArray(6, 34, 17, 22, 48);
         System.out.println("Минимальное число в массиве: " + intCornerValues[0] + "\n"
                 + "Максимальное число в массиве: " + intCornerValues[1]);
+
+        /* TEST: Вывод результата метода cornerValuesArray типа int[] с одинаковым значением в массиве: */
+        int[] intCornerValues2 = cornerValuesArray(6, 6, 6, 6, 6);
+        System.out.println("Минимальное число в массиве: " + intCornerValues2[0] + "\n"
+                + "Максимальное число в массиве: " + intCornerValues2[1]);
+
+        /* TEST: Вывод результата метода cornerValuesArray типа int[] с одним значением в массиве: */
+        int[] intCornerValues3 = cornerValuesArray(100);
+        System.out.println("Минимальное число в массиве: " + intCornerValues3[0] + "\n"
+                + "Максимальное число в массиве: " + intCornerValues3[1]);
+
+        /* TEST: Вывод результата метода cornerValuesArray типа int[] с пустым значением в массиве: */
+        int[] countNull = {};
+        int[] intCornerValues4 = cornerValuesArray(countNull);
+        System.out.println("Минимальное число в массиве: " + intCornerValues4[0] + "\n"
+                + "Максимальное число в массиве: " + intCornerValues4[1]);
+
 
         /* 1.1 Вывод результата метода cornerValuesArray типа char[]: */
         char[] charCornerValues = cornerValuesArray('J', 'A', 'V', 'A');
@@ -40,6 +73,36 @@ public class Methods {
                 " (Unicode: " + (int) charCornerValues[0] + ")");
         System.out.println("Максимальный символ в массиве: " + charCornerValues[1] +
                 " (Unicode: " + (int) charCornerValues[1] + ")");
+
+        /* TEST: Вывод результата метода cornerValuesArray типа char[] с одинаковыми символами в массиве: */
+        char[] charCornerValues2 = cornerValuesArray('A', 'A', 'A', 'A');
+        System.out.println("Минимальный символ в массиве: " + charCornerValues2[0] +
+                " (Unicode: " + (int) charCornerValues2[0] + ")");
+        System.out.println("Максимальный символ в массиве: " + charCornerValues2[1] +
+                " (Unicode: " + (int) charCornerValues2[1] + ")");
+
+        /* TEST: Вывод результата метода cornerValuesArray типа char[] с одним символом в массиве: */
+        char[] charCornerValues3 = cornerValuesArray('A');
+        System.out.println("Минимальный символ в массиве: " + charCornerValues3[0] +
+                " (Unicode: " + (int) charCornerValues3[0] + ")");
+        System.out.println("Максимальный символ в массиве: " + charCornerValues3[1] +
+                " (Unicode: " + (int) charCornerValues3[1] + ")");
+
+        /* TEST: Вывод результата метода cornerValuesArray типа char[] с пустым массивом: */
+        char[] charNull = {};
+        char[] charCornerValues4 = cornerValuesArray(charNull);
+        System.out.println("Минимальный символ в массиве: " + charCornerValues4[0] +
+                " (Unicode: " + (int) charCornerValues4[0] + ")");
+        System.out.println("Максимальный символ в массиве: " + charCornerValues4[1] +
+                " (Unicode: " + (int) charCornerValues4[1] + ")");
+
+        /* Lesson 25-26
+         * Вызов результата метода для факториала */
+        int number = 5;
+        System.out.println("Факториал числа " + number + ": " + factorial(number));
+
+        int number2 = -5;
+        System.out.println("Факториал числа " + number2 + " = " + factorial(number2));
 
     }
 
@@ -74,6 +137,10 @@ public class Methods {
      * @return возвращает массив из двух строк: первой является самая короткая, второй — самая длинная.
      */
     static String[] cornerValuesArray(String... array) {
+        if (array == null || array.length == 0) {
+            return new String[]{null, null};
+        }
+
         String shortWord = array[0];
         String longWord = array[0];
 
@@ -99,6 +166,10 @@ public class Methods {
      * @return возвращает массив, где первый элемент — минимальное число, второй элемент — максимальное число.
      */
     static int[] cornerValuesArray(int... array) {
+        if (array.length == 0) {
+            return new int[]{0, 0};
+        }
+
         int minCoin = array[0];
         int maxCoin = array[0];
 
@@ -122,6 +193,10 @@ public class Methods {
      * @return массив, где первый элемент — символ с минимальным кодом Unicode, второй — с максимальным
      */
     static char[] cornerValuesArray(char... array) {
+        if (array.length == 0) {
+            return new char[]{'\0', '\0'};
+        }
+
         char minSymbol = array[0];
         char maxSymbol = array[0];
 
@@ -134,5 +209,23 @@ public class Methods {
             }
         }
         return new char[]{minSymbol, maxSymbol};
+    }
+
+    /**
+     * Метод для нахождения факториала числа с использованием рекурсии.
+     *
+     * @param n число, факториал которого нужно вычислить.
+     * @return факториал числа n.
+     */
+    static int factorial(int n) {
+        if (n < 0) {
+            System.out.println("Ошибка: число должно быть неотрицательным.");
+            return -1;
+        }
+        if (n <= 1) {
+            return 1;
+        }
+        /* Рекурсивный случай: n * факториал от (n - 1) */
+        return n * factorial(n - 1);
     }
 }
