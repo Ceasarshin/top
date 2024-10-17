@@ -8,6 +8,24 @@ public class Author {
     private String lastName;
 
     /**
+     * Пустой конструктор
+     */
+    public Author() {
+
+    }
+
+    /**
+     * Конструктор
+     *
+     * @param firstName Имя автора книги
+     * @param lastName  Фамилия автора книги
+     */
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    /**
      * Возвращает имя автора.
      *
      * @return имя автора.
@@ -44,12 +62,12 @@ public class Author {
     }
 
     /**
-     * Возвращает полную информацию об авторе, включающую имя и фамилию.
+     * Возвращает полную информацию об авторе, включающую имя и фамилию методом toString().
      *
      * @return строка, содержащая имя и фамилию автора.
      */
-    public String autorInfo() {
+    @Override
+    public String toString() {
         return firstName + " " + lastName;
     }
 }
-

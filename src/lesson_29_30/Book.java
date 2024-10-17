@@ -9,6 +9,26 @@ public class Book {
     private Integer year;
 
     /**
+     * Пустой конструктор
+     */
+    public Book() {
+
+    }
+
+    /**
+     * Конструктор
+     *
+     * @param title  Название книги
+     * @param author Данные автора
+     * @param year   Год выпуска
+     */
+    public Book(String title, Author author, Integer year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+
+    /**
      * Возвращает заголовок книги.
      *
      * @return заголовок книги.
@@ -22,7 +42,7 @@ public class Book {
      *
      * @return объект Author, представляющий автора книги.
      */
-    public Author getAutor() {
+    public Author getAuthor() {
         return author;
     }
 
@@ -49,7 +69,7 @@ public class Book {
      *
      * @param author объект Author, представляющий автора книги.
      */
-    public void setAutor(Author author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -62,12 +82,11 @@ public class Book {
         this.year = year;
     }
 
-    /**
-     * Возвращает информацию о книге, включая заголовок, автора и год выпуска.
-     *
-     * @return строка, содержащая информацию о книге.
+    /** Возвращает полную информацию о книге, включающую название,автора  и год выпуска.
+     * Метод toString()
      */
-    public String bookInfo() {
-        return String.format("Название книги: '%s', Автор книги: %s, Год выпуска: %d", title, author.autorInfo(), year);
+    @Override
+    public String toString() {
+        return "Название книги: '" + title + "', Автор книги: " + author.toString() + ", Год выпуска: " + year;
     }
 }
