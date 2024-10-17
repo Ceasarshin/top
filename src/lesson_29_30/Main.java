@@ -18,7 +18,7 @@ public class Main {
 
         // Создаем книги:
         Book book = new Book("Язык программирования Java", author, 2024);
-        Book book2 = new Book("Java эффективное программирование", author2, 2019);
+        Book book2 = new Book("Java эффективное программирование", author2, 2020);
 
         // Вывод информации о книгах с помощью метода toString():
         System.out.println(book);
