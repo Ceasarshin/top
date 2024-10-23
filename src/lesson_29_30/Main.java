@@ -7,30 +7,37 @@ package lesson_29_30;
 public class Main {
     /**
      * Главный класс.
-     * Создает объекты авторов и книг, задает их параметры, и выводит информацию о книгах в консоль.
+     * Создает объекты: авторов и книг, задает их параметры, и выводит информацию о книгах.
      *
      * @param args аргументы.
      */
     public static void main(String[] args) {
-        Author author = new Author();
-        author.setFirstName("Дмитрий");
-        author.setLastName("Лепехо");
+        // Создаем авторов:
+        Author author = new Author("Дмитрий", "Лепехо");
+        Author author2 = new Author("Джошуа", "Блох");
 
-        Author author2 = new Author();
-        author2.setFirstName("Джошуа");
-        author2.setLastName("Блох");
+        // Создаем книги:
+        Book book = new Book("Язык программирования Java", author, 2024);
+        Book book2 = new Book("Java эффективное программирование", author2, 2020);
 
-        Book book = new Book();
-        book.setTitle("Язык программирования Java");
-        book.setAutor(author);
-        book.setYear(2024);
+        // Вывод информации о книгах с помощью метода toString():
+        System.out.println(book);
+        System.out.println(book2);
 
-        Book book2 = new Book();
-        book2.setTitle("Java эффективное программирование");
-        book2.setAutor(author2);
-        book2.setYear(2019);
+        // Изменение информации о книгах применяя сеттеры:
+        book.setTitle("Чистый код");
+        book.setYear(2023);
 
-        System.out.println(book.bookInfo());
-        System.out.println(book2.bookInfo());
+        Author newAuthorBook2 = new Author("Владислав", "Матвеев");
+        book2.setAuthor(newAuthorBook2);
+
+        // Получение и вывод всех полей книг с помощью геттеров:
+        System.out.println("\nИнформация по первой книге после редактирования:");
+        System.out.printf("Название книги: '%s', Автор книги: %s, Год выпуска: %d%n",
+                book.getTitle(), book.getAuthor(), book.getYear());
+
+        System.out.println("\nИнформация по первой книге после редактирования:");
+        System.out.printf("Название книги: '%s', Автор книги: %s, Год выпуска: %d%n",
+                book2.getTitle(), book2.getAuthor(), book2.getYear());
     }
 }
