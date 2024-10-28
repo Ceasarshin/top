@@ -1,16 +1,11 @@
 package lesson_33_34;
 
 /**
- * Базовый класс Animal, представляющий животное.
+ * Базовый абстрактный класс Animal, представляющий животное.
  */
-public class Animal {
+abstract class Animal {
     private String name;
 
-    /**
-     * Пустой конструктор для создания объекта Animal.
-     */
-    public Animal() {
-    }
 
     /**
      * Конструктор для создания объекта Animal.
@@ -22,37 +17,32 @@ public class Animal {
     }
 
     /**
-     * Устанавливает имя животного.
-     *
-     * @param name новое имя животного
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
      * Возвращает имя животного.
      *
-     * @return имя животного
+     * @return имя животного.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Выводит звук, который издает животное. Может быть переопределен в подклассах.
+     * Абстрактный метод makeSound
+     * Задает звук животному, который нужно реализовать в подклассах.
      */
-    public void makeSound() {
-        System.out.println(name + " издает звук: ");
+    public abstract void makeSound();
 
-    }
+    /**
+     * Абстрактный метод move
+     * Задает как двигается животное
+     * */
+    public abstract void move();
 
     /**
      * Выводит сообщение о том, что животное ест. Может быть переопределен в подклассах.
      */
     public void eat() {
-        System.out.println(name + " ест: ");
+        System.out.println(name + " ест:");
     }
 
-   
+
 }

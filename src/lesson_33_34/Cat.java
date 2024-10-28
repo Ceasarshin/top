@@ -2,9 +2,9 @@ package lesson_33_34;
 
 /**
  * Класс Cat, представляющий кошку.
- * Наследуется от класса Animal.
+ * Наследуется от класса Animal и реализует интерфейс Pet.
  */
-public class Cat extends Animal {
+public class Cat extends Animal implements Pet {
     /**
      * Конструктор для создания объекта Cat.
      *
@@ -19,7 +19,12 @@ public class Cat extends Animal {
      */
     @Override
     public void makeSound() {
-        System.out.println(getName() + " говорит: Мяу");
+        System.out.println(getName() + " говорит: Мяу!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getName() + " крадется.");
     }
 
     /**
@@ -27,6 +32,22 @@ public class Cat extends Animal {
      */
     @Override
     public void eat() {
-        System.out.println(getName() + " ест рыбу!");
+        System.out.println(getName() + " ест рыбу.");
+    }
+
+    /**
+     * Выводит метод для игры с животным:
+     */
+    @Override
+    public void play() {
+        System.out.println(getName() + " играет с мышкой.");
+    }
+
+    /**
+     * Выводит метод для демонстрации дружелюбного поведения:
+     */
+    @Override
+    public void beFriendly() {
+        System.out.println(getName() + " мурлычет и ласкается.");
     }
 }
