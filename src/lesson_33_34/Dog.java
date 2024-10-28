@@ -4,7 +4,7 @@ package lesson_33_34;
  * Класс Dog, представляющий собаку.
  * Наследуется от класса Animal и реализует интерфейс Pet.
  */
-public class Dog extends Animal implements Pet {
+public final class Dog extends Animal implements Pet {
     /**
      * Конструктор для создания объекта Dog.
      *

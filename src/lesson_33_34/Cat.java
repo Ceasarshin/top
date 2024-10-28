@@ -4,7 +4,7 @@ package lesson_33_34;
  * Класс Cat, представляющий кошку.
  * Наследуется от класса Animal и реализует интерфейс Pet.
  */
-public class Cat extends Animal implements Pet {
+public final class Cat extends Animal implements Pet {
     /**
      * Конструктор для создания объекта Cat.
      *

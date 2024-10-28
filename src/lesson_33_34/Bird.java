@@ -4,7 +4,7 @@ package lesson_33_34;
  * Класс Bird, представляющий птицу.
  * Наследуется от класса Animal.
  */
-public class Bird extends Animal {
+public final class Bird extends Animal {
     private boolean canFly;
 
     /**
