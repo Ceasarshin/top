@@ -40,7 +40,7 @@ public class Cat extends Animal implements Pet {
      */
     @Override
     public void play() {
-        System.out.println(getName() + " играет с мышкой.");
+        System.out.println(getName() + " играет с игрушкой-мышкой.");
     }
 
     /**

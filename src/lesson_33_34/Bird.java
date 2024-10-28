@@ -43,14 +43,16 @@ public class Bird extends Animal {
     public void makeSound() {
         System.out.println(getName() + " говорит: Чирик-чирик!");
     }
+
     @Override
     public void move() {
         if (canFly) {
             System.out.println(getName() + " летит.");
         } else {
-            System.out.println(getName() + " сидит.");
+            System.out.println(getName() + " ходит.");
         }
     }
+
     /**
      * Выводит сообщение о том, что птица ест:
      */

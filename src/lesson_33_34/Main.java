@@ -34,7 +34,7 @@ public class Main {
                 System.out.println(birdAnimal.getName() + (birdAnimal.isCanFly() ? " может летать!" : " не может летать!"));
             }
 
-            // Проверка, является ли животное домашним
+            // Проверка, является ли животное домашним:
             if (animal instanceof Pet) {
                 Pet pet = (Pet) animal;
                 System.out.println("Животное домашнее.");

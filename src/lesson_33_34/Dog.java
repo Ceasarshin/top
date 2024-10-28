@@ -40,8 +40,9 @@ public class Dog extends Animal implements Pet {
      */
     @Override
     public void play() {
-        System.out.println(getName() + " играет с хозяином.");
+        System.out.println(getName() + " играет с мячом и хозяином.");
     }
+
     /**
      * Выводит метод для демонстрации дружелюбного поведения:
      */
