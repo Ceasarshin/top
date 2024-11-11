@@ -2,9 +2,9 @@ package lesson_33_34;
 
 /**
  * Класс Dog, представляющий собаку.
- * Наследуется от класса Animal.
+ * Наследуется от класса Animal и реализует интерфейс Pet.
  */
-public class Dog extends Animal {
+public final class Dog extends Animal implements Pet {
     /**
      * Конструктор для создания объекта Dog.
      *
@@ -19,7 +19,12 @@ public class Dog extends Animal {
      */
     @Override
     public void makeSound() {
-        System.out.println(getName() + " говорит: Гав-гав");
+        System.out.println(getName() + " говорит: Гав-гав!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getName() + " бежит.");
     }
 
     /**
@@ -27,6 +32,22 @@ public class Dog extends Animal {
      */
     @Override
     public void eat() {
-        System.out.println(getName() + " ест кость!");
+        System.out.println(getName() + " ест кость.");
+    }
+
+    /**
+     * Выводит метод для игры с животным:
+     */
+    @Override
+    public void play() {
+        System.out.println(getName() + " играет с мячом и хозяином.");
+    }
+
+    /**
+     * Выводит метод для демонстрации дружелюбного поведения:
+     */
+    @Override
+    public void beFriendly() {
+        System.out.println(getName() + " виляет хвостом.");
     }
 }

@@ -4,7 +4,7 @@ package lesson_33_34;
  * Класс Bird, представляющий птицу.
  * Наследуется от класса Animal.
  */
-public class Bird extends Animal {
+public final class Bird extends Animal {
     private boolean canFly;
 
     /**
@@ -41,7 +41,16 @@ public class Bird extends Animal {
      */
     @Override
     public void makeSound() {
-        System.out.println(getName() + " говорит: Чирик-чирик");
+        System.out.println(getName() + " говорит: Чирик-чирик!");
+    }
+
+    @Override
+    public void move() {
+        if (canFly) {
+            System.out.println(getName() + " летит.");
+        } else {
+            System.out.println(getName() + " ходит.");
+        }
     }
 
     /**
@@ -49,6 +58,6 @@ public class Bird extends Animal {
      */
     @Override
     public void eat() {
-        System.out.println(getName() + " ест семена!");
+        System.out.println(getName() + " ест семена.");
     }
 }
