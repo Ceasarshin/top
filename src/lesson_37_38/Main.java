@@ -1,76 +1,50 @@
 package lesson_37_38;
-
 import java.util.ArrayList;
-
 /**
- * Класс Main - точка входа в программу.
- * Демонстрирует создание и поведение объектов класса Player.
+ * Класс Main демонстрирует использование классов Player и Game.
+ * Создает игру, добавляет игроков, запускает процесс выносливости и удаляет выдохшихся игроков.
  */
 public class Main {
     /**
-     * Точка входа в программу.
+     * Точка входа в программу. Создает объект Game и добавляет игроков.
+     * Выполняет проверку выносливости и удаляет игроков, у которых закончилась выносливость.
      *
-     * @param args аргументы.
+     * @param args Аргументы командной строки
      */
     public static void main(String[] args) {
-        // Список для хранения всех созданных игроков
-        ArrayList<Player> playersOnField = new ArrayList<>();
+        Game game = new Game();
 
-        // Создаем 6 игроков и добавляем их в список, если они успешно созданы
-        Player gamer1 = Player.addPlayer("Алексей");
-        if (gamer1 != null) playersOnField.add(gamer1);
+        // Добавляем игроков в игру
+        game.addPlayer("Алексей");
+        game.addPlayer("Владимир");
+        game.addPlayer("Дмитрий");
+        game.addPlayer("Станислав");
+        game.addPlayer("Олег");
+        game.addPlayer("Григорий");
 
-        Player gamer2 = Player.addPlayer("Владимир");
-        if (gamer2 != null) playersOnField.add(gamer2);
+        // Пытаемся добавить седьмого игрока (не добавится, т.к. достигнут лимит)
+        game.addPlayer("Ярослав");
 
-        Player gamer3 = Player.addPlayer("Дмитрий");
-        if (gamer3 != null) playersOnField.add(gamer3);
+        // Проверка наличия игрока по имени
+        System.out.println("Есть ли игрок с именем Олег? " + game.hasPlayer("Олег"));
 
-        Player gamer4 = Player.addPlayer("Станислав");
-        if (gamer4 != null) playersOnField.add(gamer4);
+        // Вывод информации о количестве игроков
+        game.info();
 
-        Player gamer5 = Player.addPlayer("Олег");
-        if (gamer5 != null) playersOnField.add(gamer5);
-
-        Player gamer6 = Player.addPlayer("Григорий");
-        if (gamer6 != null) playersOnField.add(gamer6);
-
-        // Выводим состав всех игроков на поле в начале
-        System.out.println("Состав игроков на поле:");
-        int playerNumber = 1;
-        for (Player player : playersOnField) {
-            System.out.println("Игрок #" + playerNumber + " - Имя: " + player.getName() + ", Выносливость: " + player.getStamina());
-            playerNumber++;
-        }
-
-        // Проверяем информацию о количестве игроков на поле:
-        Player.info();
-        System.out.println();
-
-        // Пытаемся добавить 7-го и 8-го игрока:
-        System.out.println("Попытка добавить седьмого игрока на футбольное поле:");
-        Player gamer7 = Player.addPlayer("Ярослав");
-        if (gamer7 != null) {
-            System.out.println(gamer7.getName() + " успешно добавлен на поле.");
-        }
-        System.out.println();
-
-        System.out.println("Попытка добавить восьмого игрока на футбольное поле:");
-        Player gamer8 = Player.addPlayer("Андрей");
-        if (gamer8 != null) {
-            System.out.println(gamer8.getName() + " успешно добавлен на поле.");
-        }
-        System.out.println();
-
-        // Применяем метод run к первому игроку до тех пор, пока он не выдохнется
-        if (gamer1 != null) {
-            while (gamer1.getStamina() > Player.MIN_STAMINA) {
-                gamer1.run();
+        // Запускаем "бег" для каждого игрока, пока у кого-то не закончится выносливость
+        for (Player player : new ArrayList<>(game.getPlayers())) {
+            while (player.getStamina() > Player.getMinStamina()) {
+                if (player.run()) {
+                    game.removePlayer(player); // Удаляем игрока, если он выдохся
+                    break;
+                }
             }
         }
 
-        // Выводим количество игроков на поле после того, как первый игрок выдохся:
-        System.out.println("Общее количество игроков на поле: " + Player.getCountPlayers() + " человек.");
+        // Вывод итогового количества игроков на поле
+        game.info();
     }
 }
+
+
 
