@@ -1,8 +1,10 @@
 package lesson_39_40;
 
+import java.util.Objects;
+
 /**
  * Класс House представляет дом с определенным количеством этажей, комнат и наличием либо отсутствием гаража.
- * Вкючает паттерн Builder для упрощенного создания объектов.
+ * Включает паттерн Builder для упрощенного создания объектов, а также методы equals и hashCode.
  */
 public class House {
     private final int floors;       // количество этажей
@@ -45,6 +47,34 @@ public class House {
      */
     public boolean hasGarage() {
         return hasGarage;
+    }
+
+    /**
+     * Переопределяет метод equals для сравнения объектов House.
+     * Сравнение производится по всем полям: floors, rooms и hasGarage.
+     *
+     * @param o Объект для сравнения.
+     * @return true, если объекты равны; false в противном случае.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return floors == house.floors &&
+                rooms == house.rooms &&
+                hasGarage == house.hasGarage;
+    }
+
+    /**
+     * Переопределяет метод hashCode для объекта House.
+     * Использует все поля для вычисления хеш-кода.
+     *
+     * @return хеш-код для данного объекта House.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(floors, rooms, hasGarage);
     }
 
     /**
