@@ -5,7 +5,7 @@ package lesson_55_56;
  */
 public class CarNotFoundException extends RuntimeException {
     /**
-     * Конструктор для создания исключения с сообщением.
+     * Конструктор для создания исключения с выводом сообщения.
      *
      * @param message сообщение об ошибке.
      */

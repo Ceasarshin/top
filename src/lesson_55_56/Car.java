@@ -10,11 +10,11 @@ public class Car {
     /**
      * Конструктор для создания объекта машины.
      *
-     * @param make  марка машины.
+     * @param brand  марка машины.
      * @param model модель машины.
      */
-    public Car(String make, String model) {
-        this.brand = make;
+    public Car(String brand, String model) {
+        this.brand = brand;
         this.model = model;
     }
 

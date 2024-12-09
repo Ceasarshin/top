@@ -34,8 +34,8 @@ public class Main {
      */
     private static void handleDivision() {
         try {
-            System.out.println("Результат деления: " + divide(14, 2));
-            System.out.println("Результат деления: " + divide(14, 0));
+            System.out.println("Результат деления: " + divideByZero(14, 2));
+            System.out.println("Результат деления: " + divideByZero(14, 0));
         } catch (ArithmeticException e) {
             System.out.println("Ошибка: " + e.getMessage());
         }
@@ -78,7 +78,7 @@ public class Main {
      * @return результат деления в виде double.
      * @throws ArithmeticException если знаменатель равен нулю.
      */
-    public static double divide(int numerator, int denominator) {
+    public static double divideByZero(int numerator, int denominator) {
         if (denominator == 0) {
             throw new ArithmeticException("Деление на ноль невозможно!");
         }
