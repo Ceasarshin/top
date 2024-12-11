@@ -25,28 +25,28 @@ public class Book {
     }
 
     /**
-     * @return возвращает индификатор книги (геттер)
+     * @return возвращает индификатор книги (геттер).
      */
     public int getId() {
         return id;
     }
 
     /**
-     * @return возвращает название книги (геттер)
+     * @return возвращает название книги (геттер).
      */
     public String getTitle() {
         return title;
     }
 
     /**
-     * @return возвращает автора книги (геттер)
+     * @return возвращает автора книги (геттер).
      */
     public String getAuthor() {
         return author;
     }
 
     /**
-     * @return возвращает доступность книги (геттер)
+     * @return возвращает доступность книги.
      */
     public boolean isAvailable() {
         return isAvailable;
@@ -54,28 +54,31 @@ public class Book {
 
 
     /**
-     * @param title задает название книги (сеттер)
+     * @param title задает название книги (сеттер).
      */
     public void setTitle(String title) {
+
         this.title = title;
     }
 
     /**
-     * @param author задает автора книги (сеттер)
+     * @param author задает автора книги (сеттер).
      */
     public void setAuthor(String author) {
+
         this.author = author;
     }
 
     /**
-     * @param available задает доступность книги (сеттер)
+     * @param available задает доступность книги (сеттер).
      */
     public void setAvailable(boolean available) {
+
         isAvailable = available;
     }
 
     @Override
     public String toString() {
-        return String.format("Book{id=%d, title='%s', author='%s', isAvailable=%b}", id, title, author, isAvailable);
+        return String.format("Книга {id = %d, Название = '%s', Автор = '%s', Доступность = %b}", id, title, author, isAvailable);
     }
 }

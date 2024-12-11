@@ -24,8 +24,8 @@ public class Library {
     /**
      * Получает книгу по ID.
      *
-     * @param id идентификатор книги
-     * @return объект книги или null, если книга не найдена
+     * @param id идентификатор книги.
+     * @return объект книги или null, если книга не найдена.
      */
     public Book getBookById(int id) {
         return books.get(id);
@@ -34,7 +34,7 @@ public class Library {
     /**
      * Получает список всех книг, отсортированных в соответствии с компаратором.
      *
-     * @param comparator компаратор для сортировки
+     * @param comparator компаратор для сортировки.
      * @return список книг
      */
     public List<Book> getBooks(Comparator<Book> comparator) {
@@ -46,8 +46,8 @@ public class Library {
     /**
      * Получает список доступных или недоступных книг.
      *
-     * @param isAvailable фильтр по доступности
-     * @param comparator  компаратор для сортировки
+     * @param isAvailable фильтр по доступности.
+     * @param comparator  компаратор для сортировки.
      * @return список книг
      */
     public List<Book> getBooks(boolean isAvailable, Comparator<Book> comparator) {
@@ -60,7 +60,7 @@ public class Library {
     /**
      * Получает общее количество книг.
      *
-     * @return количество всех книг
+     * @return количество всех книг.
      */
     public long getTotalBooksCount() {
         return books.size();
@@ -69,8 +69,8 @@ public class Library {
     /**
      * Получает количество доступных или недоступных книг.
      *
-     * @param isAvailable фильтр по доступности
-     * @return количество книг
+     * @param isAvailable фильтр по доступности.
+     * @return количество книг.
      */
     public long getBooksCount(boolean isAvailable) {
         return books.values().stream()
@@ -81,7 +81,7 @@ public class Library {
     /**
      * Получает список уникальных авторов, отсортированных по алфавиту.
      *
-     * @return список авторов
+     * @return список авторов.
      */
     public List<String> getAuthors() {
         return books.values().stream()

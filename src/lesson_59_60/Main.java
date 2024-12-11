@@ -21,7 +21,7 @@ public class Main {
         library.addBook(new Book(4, "Чистый код. Создание, анализ и рефакторинг", "Роберт Мартин", false));
         library.addBook(new Book(5, "Философия Java", "Брюс Эккель", true));
 
-        System.out.println("Книга по ID 1: " + library.getBookById(1));
+        System.out.println("ID книги 1: " + library.getBookById(1));
 
         System.out.println("\nСписок всех книг:");
         library.getBooks(Comparator.comparing(Book::getTitle)).forEach(System.out::println);
